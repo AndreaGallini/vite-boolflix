@@ -1,12 +1,15 @@
 <template>
   <div class="main">
     <FilmComponent />
+    <h1>Serie</h1>
+    <SeriesComponent />
   </div>
 </template>
 
 <script>
 import { store } from "../store";
 import FilmComponent from "./FilmComponent.vue";
+import SeriesComponent from "./SeriesComponent.vue";
 export default {
   data() {
     return {
@@ -15,8 +18,9 @@ export default {
   },
   created() {
     store.getFIlm();
+    store.getSeries();
   },
-  components: { FilmComponent },
+  components: { FilmComponent, SeriesComponent },
 };
 </script>
 
