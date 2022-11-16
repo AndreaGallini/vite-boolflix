@@ -1,9 +1,18 @@
 <template>
-  <div></div>
+  <div>
+    <h1>{{ store.filmsArray }}</h1>
+  </div>
 </template>
 
 <script>
-export default {};
+import { store } from "../store";
+export default {
+  data() {
+    return {
+      store,
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>
