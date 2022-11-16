@@ -31,6 +31,7 @@ export default {
   data() {
     return {
       store,
+      starArray: [],
     };
   },
   methods: {
@@ -39,9 +40,13 @@ export default {
     },
   },
   computed: {
-    //  getStars() {
-    //    return Math.ceil(this.item.vote_average / 2);
-    // },
+    getStars() {
+      this.starArray = store.seriesArray;
+      console.log(this.starArray);
+      //return Math.ceil(parseInt(this.starArray.vote_average) / 2);
+      let voto = this.starArray.vote_average;
+      console.log(voto);
+    },
   },
 };
 </script>

@@ -2,6 +2,7 @@
   <div class="main">
     <FilmComponent />
     <h1>Serie</h1>
+
     <SeriesComponent />
   </div>
 </template>
