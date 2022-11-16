@@ -16,7 +16,7 @@
         <h3>{{ serie.original_language }}</h3>
         <p>{{ serie.vote_average }}</p>
         <span v-for="number in 5" :key="number">
-          <i class="fa-solid fa-star" v-if="getStars <= number"></i>
+          <i class="fa-solid fa-star" v-if="getStars >= number"></i>
           <i class="fa-regular fa-star" v-else></i>
         </span>
       </div>
@@ -37,10 +37,11 @@ export default {
     getImagePath(imgPath) {
       return new URL(imgPath, import.meta.url).href;
     },
-    getStars() {
-      console.log(Math.ceil(this.serie.vote_average / 2));
-      return Math.ceil(this.serie.vote_average / 2);
-    },
+  },
+  computed: {
+    //  getStars() {
+    //    return Math.ceil(this.item.vote_average / 2);
+    // },
   },
 };
 </script>
