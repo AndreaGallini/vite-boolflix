@@ -29,6 +29,7 @@ export const store = reactive({
             console.log(this.filmsArray)
     })
     },
+
         getSeries() {
         axios.get(this.SeriesAPI+this.search).then((res) => {
            // console.log(res.data.results)

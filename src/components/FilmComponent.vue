@@ -98,6 +98,7 @@ export default {
 .flag {
   width: 30px;
 }
+
 i {
   color: white;
 }
