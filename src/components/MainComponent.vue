@@ -40,6 +40,7 @@ export default {
 }
 h2 {
   color: $redNetflix;
+  margin-top: 30px;
 }
 #loading_screen {
   display: block;
