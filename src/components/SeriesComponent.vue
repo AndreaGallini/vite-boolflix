@@ -11,9 +11,9 @@
       <img v-else src="/img/noImg.jpg" alt="No img Avaible" />
 
       <div>
-        <h1>{{ serie.name }}</h1>
-        <h2>{{ serie.original_name }}</h2>
-        <h3>{{ serie.original_language }}</h3>
+        <h2>{{ serie.name }}</h2>
+        <p>{{ serie.original_name }}</p>
+        <p>{{ serie.original_language }}</p>
         <p>{{ serie.vote_average }}</p>
         <span>
           <i
