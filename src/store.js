@@ -11,7 +11,8 @@ export const store = reactive({
     SeriesAPI:'https://api.themoviedb.org/3/search/tv?api_key=2864f4e774d10cd35912c94239b416a8&query=',
     flagAPI: 'https://countryflagsapi.com/png/',
     popularAPI: 'https://api.themoviedb.org/3/movie/popular?api_key=2864f4e774d10cd35912c94239b416a8',
-    popularTvAPI:'https://api.themoviedb.org/3/tv/popular?api_key=2864f4e774d10cd35912c94239b416a8',
+    popularTvAPI: 'https://api.themoviedb.org/3/tv/popular?api_key=2864f4e774d10cd35912c94239b416a8',
+    loading:false,
     
 
 
@@ -20,11 +21,11 @@ export const store = reactive({
 
 
     getFIlm() {
-        
+        this.loading = true
         axios.get(this.FilmAPI+this.search).then((res) => {
            // console.log(res.data.results)
             this.filmsArray = [...res.data.results]
-            
+            this.loading=false
             console.log(this.filmsArray)
     })
     },

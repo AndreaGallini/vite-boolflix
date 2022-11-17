@@ -115,13 +115,12 @@ span {
 .my-flex {
   display: flex;
 }
+
 .container {
-  overflow-x: scroll;
-}
-.container {
-  overflow-x: scroll;
+  overflow-x: auto;
   display: flex;
   justify-content: space-between;
+  min-height: 300px;
 }
 .card {
   // padding: 0 2rem;

@@ -2,10 +2,15 @@
   <div class="main">
     <h2 v-if="store.search === ''">Most Popular Films</h2>
     <h2 v-else>Your searched Films</h2>
-    <FilmComponent />
-    <h2 v-if="store.search === ''">Popular series</h2>
-    <h2 v-else>Your searched series</h2>
-
+    <div v-if="store.loading">
+      <div id="loading_screen">
+        <h1>Stiamo cercando i tuoi titoli ...</h1>
+        <p>Resta connesso e non cambiare sito!</p>
+      </div>
+    </div>
+    <FilmComponent v-if="!store.loading" />
+    <h2 v-if="store.search === ''">Most Popular Series</h2>
+    <h2 v-else>Your searched Series</h2>
     <SeriesComponent />
   </div>
 </template>
@@ -35,5 +40,19 @@ export default {
 }
 h2 {
   color: $redNetflix;
+}
+#loading_screen {
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  padding: 80px;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
 }
 </style>

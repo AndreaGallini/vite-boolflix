@@ -48,7 +48,7 @@
           :alt="film.title"
           class="img-logo"
         />
-        <img v-else src="/img/noImg.jpg" alt="No img Avaible" />
+        <img v-else src="/img/noImg.jpg" alt="No img Avaible" class="noImg" />
       </div>
       <div class="back">
         <h2>{{ film.title }}</h2>
@@ -112,7 +112,7 @@ span {
   display: flex;
 }
 .container {
-  overflow-x: scroll;
+  overflow-x: auto;
   display: flex;
   justify-content: space-between;
 }
@@ -125,7 +125,13 @@ span {
 }
 .img-logo {
   width: 100%;
+  height: 100%;
 }
+.noImg {
+  width: 100%;
+  height: 100%;
+}
+
 .card .back {
   position: absolute;
   transform: rotateY(180deg);
