@@ -1,22 +1,61 @@
 <template>
-  <div class="my-flex container">
-    <div v-for="(film, index) in store.filmsArray" :key="index" class="card">
-      <img
-        v-if="film.poster_path"
-        :src="
-          getImagePath(`https://image.tmdb.org/t/p/w342/${film.poster_path}`)
-        "
-        :alt="film.title"
-        class="img-logo"
-      />
-      <img v-else src="/img/noImg.jpg" alt="No img Avaible" />
+  <div class="my-flex container" v-if="store.search === ''">
+    <div
+      class="card"
+      v-for="(popular, index) in store.popularArray"
+      :key="index"
+    >
+      <div class="front">
+        <img
+          v-if="popular.poster_path"
+          :src="
+            getImagePath(
+              `https://image.tmdb.org/t/p/w342/${popular.poster_path}`
+            )
+          "
+          :alt="popular.title"
+          class="img-logo"
+        />
+        <img v-else src="/img/noImg.jpg" alt="No img Avaible" />
+      </div>
+      <div class="back">
+        <h2>{{ popular.title }}</h2>
+        <p>{{ popular.original_title }}</p>
 
-      <div>
+        <img
+          class="flag"
+          :src="store.getFlag(popular.original_language)"
+          alt=""
+        />
+
+        <span>
+          <i
+            class="fa-solid fa-star"
+            v-for="star in Math.round(popular.vote_average / 2)"
+          ></i>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="my-flex container" v-else>
+    <div class="card" v-for="(film, index) in store.filmsArray" :key="index">
+      <div class="front">
+        <img
+          v-if="film.poster_path"
+          :src="
+            getImagePath(`https://image.tmdb.org/t/p/w342/${film.poster_path}`)
+          "
+          :alt="film.title"
+          class="img-logo"
+        />
+        <img v-else src="/img/noImg.jpg" alt="No img Avaible" />
+      </div>
+      <div class="back">
         <h2>{{ film.title }}</h2>
         <p>{{ film.original_title }}</p>
-        <p>{{ film.original_language }}</p>
+
         <img class="flag" :src="store.getFlag(film.original_language)" alt="" />
-        <p>{{ film.vote_average }}</p>
+
         <span>
           <i
             class="fa-solid fa-star"
@@ -59,21 +98,56 @@ export default {
 .flag {
   width: 30px;
 }
+i {
+  color: white;
+}
+h2,
+p,
+img,
+span {
+  padding: 0.5rem 0;
+}
 
 .my-flex {
   display: flex;
 }
 .container {
   overflow-x: scroll;
-}
-.card {
-  padding: 0 2rem;
-
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
 }
-.img-logo {
+.card {
+  // padding: 0 2rem;
+  position: relative;
   height: 500px;
+  width: 500px;
+  margin: 0 170px;
+}
+.img-logo {
+  width: 100%;
+}
+.card .back {
+  position: absolute;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  transition: all 0.4s linear;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+.card .front {
+  position: absolute;
+  transform: rotateY(0deg);
+  backface-visibility: hidden;
+  transition: all 0.4s linear;
+  width: 300px;
+}
+.card:hover .back {
+  transform: rotateY(0deg);
+  cursor: pointer;
+}
+.card:hover .front {
+  transform: rotateY(-180deg);
+  cursor: pointer;
 }
 </style>

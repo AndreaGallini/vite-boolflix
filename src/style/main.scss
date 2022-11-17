@@ -3,6 +3,7 @@ $fa-font-path: "../assets/webfonts";
 @import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
 @import '@fortawesome/fontawesome-free/scss/solid.scss';
 @import '@fortawesome/fontawesome-free/scss/regular.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 *{
     margin: 0;
@@ -11,6 +12,7 @@ $fa-font-path: "../assets/webfonts";
 }
 body{
     background-color: $background;
+    font-family: Roboto, sans-serif;
 }
 h2,h3,p{
     color: white;
