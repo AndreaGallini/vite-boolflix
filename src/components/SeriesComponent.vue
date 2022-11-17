@@ -7,6 +7,7 @@
           getImagePath(`https://image.tmdb.org/t/p/w342/${serie.poster_path}`)
         "
         :alt="serie.name"
+        class="img-logo"
       />
       <img v-else src="/img/noImg.jpg" alt="No img Avaible" />
 
@@ -14,6 +15,11 @@
         <h2>{{ serie.name }}</h2>
         <p>{{ serie.original_name }}</p>
         <p>{{ serie.original_language }}</p>
+        <img
+          class="flag"
+          :src="store.getFlag(serie.original_language)"
+          alt=""
+        />
         <p>{{ serie.vote_average }}</p>
         <span>
           <i
@@ -54,6 +60,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.flag {
+  width: 30px;
+}
+
 .my-flex {
   display: flex;
 }
@@ -67,7 +77,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
 }
-img {
+.img-logo {
   height: 500px;
 }
 </style>
