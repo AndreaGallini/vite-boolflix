@@ -16,7 +16,7 @@
           :alt="popularSeries.name"
           class="img-logo"
         />
-        <img v-else src="/img/noImg.jpg" alt="No img Avaible" />
+        <img v-else src="/img/noImg.jpg" alt="No img Avaible" class="noImg" />
       </div>
       <div class="back">
         <h2>{{ popularSeries.name }}</h2>
@@ -48,7 +48,7 @@
           :alt="serie.name"
           class="img-logo"
         />
-        <img v-else src="/img/noImg.jpg" alt="No img Avaible" />
+        <img v-else src="/img/noImg.jpg" alt="No img Avaible" class="noImg" />
       </div>
       <div class="back">
         <h2>{{ serie.name }}</h2>
@@ -104,6 +104,10 @@ export default {
 }
 i {
   color: white;
+}
+.noImg {
+  width: 300px;
+  height: 466px;
 }
 h2,
 p,

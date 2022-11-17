@@ -16,7 +16,7 @@
           :alt="popular.title"
           class="img-logo"
         />
-        <img v-else src="/img/noImg.jpg" alt="No img Avaible" />
+        <img v-else src="/img/noImg.jpg" alt="No img Avaible" class="noImg" />
       </div>
       <div class="back">
         <h2>{{ popular.title }}</h2>
@@ -111,6 +111,7 @@ span {
 .my-flex {
   display: flex;
 }
+
 .container {
   overflow-x: auto;
   display: flex;
@@ -128,8 +129,8 @@ span {
   height: 100%;
 }
 .noImg {
-  width: 100%;
-  height: 100%;
+  width: 300px;
+  height: 466px;
 }
 
 .card .back {
