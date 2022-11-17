@@ -30,7 +30,7 @@
 
         <span>
           <i
-            class="fa-solid fa-star"
+            class="fa-star"
             v-for="star in Math.round(popular.vote_average / 2)"
           ></i>
         </span>
