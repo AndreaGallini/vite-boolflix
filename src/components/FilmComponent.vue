@@ -34,6 +34,9 @@
             v-for="star in Math.round(popular.vote_average / 2)"
           ></i>
         </span>
+        <div class="description">
+          <p>{{ popular.overview }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -62,6 +65,9 @@
             v-for="star in Math.round(film.vote_average / 2)"
           ></i>
         </span>
+        <div class="description">
+          <p>{{ film.overview }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -111,6 +117,10 @@ span {
 
 .my-flex {
   display: flex;
+}
+.description {
+  height: 240px;
+  overflow-y: auto;
 }
 
 .container {

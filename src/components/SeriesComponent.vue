@@ -34,6 +34,9 @@
             v-for="star in Math.round(popularSeries.vote_average / 2)"
           ></i>
         </span>
+        <div class="description">
+          <p>{{ popularSeries.overview }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -66,6 +69,9 @@
             v-for="star in Math.round(serie.vote_average / 2)"
           ></i>
         </span>
+        <div class="description">
+          <p>{{ serie.overview }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -114,6 +120,10 @@ p,
 img,
 span {
   padding: 0.5rem 0;
+}
+.description {
+  height: 300px;
+  overflow-y: auto;
 }
 
 .my-flex {
