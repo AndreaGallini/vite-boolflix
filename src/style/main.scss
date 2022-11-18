@@ -3,7 +3,7 @@ $fa-font-path: "../assets/webfonts";
 @import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
 @import '@fortawesome/fontawesome-free/scss/solid.scss';
 @import '@fortawesome/fontawesome-free/scss/regular.scss';
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,900;1,500&display=swap');
 
 *{
     margin: 0;
@@ -12,7 +12,7 @@ $fa-font-path: "../assets/webfonts";
 }
 body{
     background-color: $background;
-    font-family: Roboto, sans-serif;
+    font-family: 'Poppins', sans-serif;
     
 }
 h2,h3,p{

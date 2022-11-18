@@ -41,6 +41,8 @@ export default {
 }
 h1 {
   color: $redNetflix;
+  text-transform: uppercase;
+  font-weight: 900;
 }
 input {
   width: 200px;
